@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+/* General Style */
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+
+article img {
+  border-radius: 1rem;
+}
+
+article p:last-of-type {
+  color: gray;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+button svg {
+  color: rgb(0, 157, 255);
+}
