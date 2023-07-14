@@ -1,4 +1,8 @@
+"use strict";
+
 console.clear();
+
+console.log("hello newbie");
 
 /*
 Rewrite the following functions as arrow functions.
@@ -86,3 +90,29 @@ function add3(a, b, c) {
 function repeat10(string) {
   return string.repeat(10);
 }
+
+// ME EXPERIMENTING
+
+// Step I
+
+// function shellFunc(callbackFunc) {
+//   callbackFunc();
+// }
+
+// function myCallbackFunc() {
+//   console.log("Callback Func works!");
+// }
+
+// shellFunc(myCallbackFunc);
+
+// Step 2
+
+function shellFunc(name, callbackFunc) {
+  callbackFunc(name);
+}
+
+function myCallbackFunc(argument) {
+  console.log("Callback Func works, ", argument, "!");
+}
+
+shellFunc("newbie", myCallbackFunc);

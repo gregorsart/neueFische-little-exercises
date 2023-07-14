@@ -29,10 +29,11 @@ progressBar.style.width = 0;
 
 function calculateScrollPercentage() {
   const totalHeight = document.body.clientHeight;
+  const visibleHeight = window.innerHeight;
   const currentSrollHeight = window.scrollY;
 
   if (totalHeight > window.innerHeight) {
-    return (currentSrollHeight / (totalHeight - window.innerHeight)) * 100;
+    return (currentSrollHeight / (totalHeight - visibleHeight)) * 100;
   } else {
     return 100;
   }
@@ -43,5 +44,3 @@ document.addEventListener("scroll", () => {
   // progressBar.style.width = `${calculateScrollPercentage()}%`;
   progressBar.style.width = calculateScrollPercentage() + "%";
 });
-
-// progressBar.style.width = calculateScrollPercentage() / 100
