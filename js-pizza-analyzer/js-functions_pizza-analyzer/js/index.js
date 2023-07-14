@@ -23,6 +23,7 @@ pizzaInput1.addEventListener("input", (ele) => {
   );
   // Update UI
   updatePizzaDisplay(pizza1, pizzaSizeLeft);
+  updateOutputColor(pizzaSizeLeft, pizzaSizeRight);
 });
 
 // PIZZA 2
@@ -34,6 +35,7 @@ pizzaInput2.addEventListener("input", (ele) => {
   );
   // Update UI
   updatePizzaDisplay(pizza2, pizzaSizeRight);
+  updateOutputColor(pizzaSizeLeft, pizzaSizeRight);
 });
 
 // Task 1
@@ -56,6 +58,13 @@ function updatePizzaDisplay(pizzaELement, newSize) {
 
 // Task 3
 // define the function updateOutputColor here
+
+function updateOutputColor(sizeLeft, sizeRight) {
+  outputSection.style.backgroundColor = "var(--green)";
+  if (sizeLeft < sizeRight) {
+    outputSection.style.backgroundColor = "var(--red)";
+  }
+}
 
 // HELPER FUNCTIONS
 function areaCircle(diameter) {
