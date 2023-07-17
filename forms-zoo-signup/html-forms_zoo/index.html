@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>HTML Zoo Form</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <section aria-label="contact">
+      <h2 id="form-heading">Zoo Visitor Sign Up</h2>
+      <p id="form-description">
+        Please provide all necessary information on your stay with us.
+      </p>
+
+      <form aria-labelledby="form-heading" aria-describedby="form-description">
+        <fieldset>
+          <legend>Enter your information</legend>
+
+          <!-- Email: label & input -->
+          <label for="email"> Enter your email here</label>
+          <input type="email" name="email" id="email" />
+          <!-- Date: label & input -->
+
+          <label for="date"> When do you want to visit?</label>
+          <input type="date" name="date" id="date" />
+          <fieldset class="radio-options">
+            <legend>Which one of these animals would you like to visit?</legend>
+
+            <!-- Radio Buttons: labels & inputs -->
+            <label for="sloths">relaxed sloths</label>
+            <input type="radio" name="sloths" id="animals" />
+            <label for="kangaroos">rjumpy kangaroos</label>
+            <input type="radio" name="kangaroos" id="animals" />
+            <label for="racoons">thieving racoons</label>
+            <input type="radio" name="racoons" id="animals" />
+          </fieldset>
+
+          <!-- Textarea: label & input -->
+          <label for="concerns"
+            >Do you have any questions before booking a visit?</label
+          ><textarea
+            name="concerns"
+            id="concerns"
+            cols="30"
+            rows="20"
+          ></textarea>
+
+          <!-- Two Checkboxes: labels & inputs -->
+          <label for="consent"
+            ><input type="checkbox" name="consent" id="consent" /> I accept the
+            processing of my date</label
+          >
+
+          <!-- Two Checkboxes: labels & inputs -->
+          <label for="newsletter"
+            ><input type="checkbox" name="newsletter" id="newsletter" /> I want
+            to subscribe to the newsletter</label
+          >
+
+          <!-- Two Buttons: reset & submit -->
+          <button type="reset">Reset Form</button>
+          <button type="submit">Submit Form</button>
+        </fieldset>
+      </form>
+    </section>
+  </body>
+</html>
