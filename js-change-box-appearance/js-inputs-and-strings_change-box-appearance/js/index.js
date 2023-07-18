@@ -30,6 +30,11 @@ const inputColor = document.querySelector('[data-js="input-color"]');
 const inputRadius = document.querySelector('[data-js="input-radius"]');
 const inputRotation = document.querySelector('[data-js="input-rotation"]');
 
+// me experimenting
+const testParagraph = document.querySelector('[data-js="test-paragraph"]');
+const testInput = document.querySelector('[data-js="test-input"]');
+const testButton = document.querySelector('[data-js="test-button"]');
+
 // EVENT LISTENERS
 
 inputColor.addEventListener("change", (ele) => {
@@ -48,4 +53,10 @@ inputRotation.addEventListener("change", (ele) => {
   const input = ele.target.value;
   const boxStyle = box.style;
   boxStyle.transform = `rotate(${input}deg)`;
+});
+
+// me experimenting
+testButton.addEventListener("click", () => {
+  // testParagraph.textContent = +testInput.value + 3;
+  testParagraph.textContent = parseInt(testInput.value, 10) + 3;
 });
