@@ -37,19 +37,19 @@ const testButton = document.querySelector('[data-js="test-button"]');
 
 // EVENT LISTENERS
 
-inputColor.addEventListener("change", (ele) => {
+inputColor.addEventListener("input", (ele) => {
   const input = ele.target.value;
   const boxStyle = box.style;
   boxStyle.filter = `hue-rotate(${input}deg)`;
 });
 
-inputRadius.addEventListener("change", (ele) => {
+inputRadius.addEventListener("input", (ele) => {
   const input = ele.target.value;
   const boxStyle = box.style;
-  boxStyle.borderRadius = `${input}px`;
+  boxStyle.borderRadius = `${input}%`;
 });
 
-inputRotation.addEventListener("change", (ele) => {
+inputRotation.addEventListener("input", (ele) => {
   const input = ele.target.value;
   const boxStyle = box.style;
   boxStyle.transform = `rotate(${input}deg)`;
