@@ -26,6 +26,27 @@ form.addEventListener("submit", (event) => {
 
   // --v-- write your code here --v--
 
+  const operator = event.target.elements.operator.value;
+  // unary operator "+" instead pf parseInt
+  const inputA = +event.target.elements.numberA.value;
+  const inputB = +event.target.elements.numberB.value;
+
+  console.log(inputA, inputB);
+
+  if (operator === "addition") {
+    console.log("addition");
+    result = add(inputA, inputB);
+  } else if (operator === "subtraction") {
+    console.log("subtraction");
+    result = subtract(inputA, inputB);
+  } else if (operator === "multiplication") {
+    console.log("multiplication");
+    result = multiply(inputA, inputB);
+  } else if (operator === "division") {
+    console.log("division");
+    result = divide(inputA, inputB);
+  }
+
   // --^-- write your code here --^--
 
   resultOutput.textContent = result;
