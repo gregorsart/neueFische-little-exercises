@@ -5,39 +5,38 @@ console.log("hello, newbie");
 
 // --------------------------------------------
 
-function handleLikeButtonClick(event) {
-  const buttonElement = event.target;
-  buttonElement.classList.toggle("post__button--liked");
-}
+// CREATE ELEMENT
+const articleElement = document.createElement("article");
+const pElement = document.createElement("p");
+const footerElement = document.createElement("footer");
+const spanElement = document.createElement("span");
+const buttonElement = document.createElement("button");
+
+// FILL CONTENT
+pElement.textContent = "I am a super important text";
+spanElement.textContent = "@username";
+buttonElement.textContent = "♥ Like";
+
+// ADD CLASSES
+articleElement.classList.add("post");
+pElement.classList.add("post__content");
+footerElement.classList.add("post__footer");
+buttonElement.classList.add("post__button");
+
+// APPEND TO DOM
+document.body.append(articleElement);
+articleElement.append(pElement, footerElement);
+footerElement.append(spanElement, buttonElement);
+
+// EVENT
 
 const likeButton = document.querySelector('[data-js="like-button"]');
 likeButton.addEventListener("click", handleLikeButtonClick);
 
-// CREATE ELEMENT
-
-const articleEle = document.createElement("article");
-const pEle = document.createElement("p");
-const footerEle = document.createElement("footer");
-const spanEle = document.createElement("span");
-const buttonEle = document.createElement("button");
-
-// FILL
-
-pEle.textContent = "I am a super important text";
-spanEle.textContent = "@username";
-buttonEle.textContent = " ♥ Like";
-
-// CLASSES
-articleEle.classList.add("post");
-pEle.classList.add("post__content");
-footerEle.classList.add("post__footer");
-buttonEle.classList.add("post__button");
-
-// APPEND
-
-document.body.append(articleEle);
-articleEle.append(pEle, footerEle);
-footerEle.append(spanEle, buttonEle);
+function handleLikeButtonClick(event) {
+  const buttonElement = event.target;
+  buttonElement.classList.toggle("post__button--liked");
+}
 
 // Exercise:
 // Use document.createElement() and append another social media post to the body.
