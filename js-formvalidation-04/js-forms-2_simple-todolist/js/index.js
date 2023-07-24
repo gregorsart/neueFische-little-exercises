@@ -14,6 +14,8 @@ form.addEventListener("submit", (event) => {
 
   console.log(headlineInput, taskInput);
   addTodo(headlineInput, taskInput);
+  form.reset();
+  event.target.elements.headline.focus();
 });
 
 // LOGIC
