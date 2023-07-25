@@ -20,7 +20,28 @@ form.addEventListener("submit", (event) => {
 
 // LOGIC
 function addTodo(headline, task) {
-  const todo = document.createElement("li");
-  todo.textContent = `${headline} –– ${task}`;
-  todoList.append(todo);
+  const infoText = document.querySelector('[data-js="info-text"]');
+  if (headline && task) {
+    infoText.setAttribute("hidden", "");
+    // create ELEMENT
+    const todo = document.createElement("li");
+    const removeButton = document.createElement("button");
+
+    // EVENT
+    removeButton.addEventListener("click", (event) => {
+      console.log("Click", event.target.parentNode);
+      event.target.parentNode.remove();
+    });
+
+    removeButton.setAttribute("type", "button");
+    removeButton.textContent = "Remove";
+    todo.textContent = `${headline} –– ${task}`;
+    // append to DOM
+    todoList.append(todo);
+    todo.append(removeButton);
+  } else {
+    infoText.removeAttribute("hidden");
+  }
 }
+
+function removeTodo() {}
