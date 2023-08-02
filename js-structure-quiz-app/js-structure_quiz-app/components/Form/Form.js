@@ -1,4 +1,4 @@
-import { handleFormSubmit } from "../../util/handleFormSubmit.js";
+import { handleFormSubmit } from "../../utils/handleFormSubmit.js";
 
 export default function Form() {
   const form = document.createElement("form");
