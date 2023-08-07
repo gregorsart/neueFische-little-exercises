@@ -27,7 +27,8 @@ export async function fetchNewColor() {
       console.log("Connection successful!");
       const data = await response.json();
       // Set new color to guess
-      setColorToGuess(data.name.closest_named_hex, data.name.value);
+      const myData = data.name;
+      setColorToGuess(myData.closest_named_hex, myData.value);
     }
   } catch (error) {
     console.error("An error occcurred!");
