@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 export default function PokemonList() {
-  const [pokemon, setPokemon] = useState([]);
   const [data, setData] = useState([]);
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?offset=0");
 
@@ -11,7 +10,6 @@ export default function PokemonList() {
         const response = await fetch(url);
         const data = await response.json();
         setData(data);
-        setPokemon(data.results);
       } catch (error) {
         console.log(error);
       }
@@ -19,6 +17,8 @@ export default function PokemonList() {
 
     loadPokemon();
   }, [url]);
+
+  if (data.length === 0) return null;
 
   return (
     <main>
@@ -35,11 +35,12 @@ export default function PokemonList() {
           setUrl(data.next);
         }}
         type="button"
+        // hidden={offset <= 0}
       >
         Next Page
       </button>
       <ul>
-        {pokemon.map(({ name }) => (
+        {data.results.map(({ name }) => (
           <li key={name}>{name}</li>
         ))}
       </ul>
