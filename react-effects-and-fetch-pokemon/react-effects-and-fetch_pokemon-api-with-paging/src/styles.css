@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  gap: 2rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  margin: 1rem 0;
+}
+
+li:nth-of-type(even) {
+  color: gray;
+}
+
+#root {
+  display: contents;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  border: 2px solid orangered;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
