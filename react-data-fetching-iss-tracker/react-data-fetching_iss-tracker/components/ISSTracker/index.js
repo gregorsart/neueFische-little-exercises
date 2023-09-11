@@ -9,7 +9,6 @@ export default function ISSTracker() {
   const { data, mutate, error, isLoading } = useSWR(URL, {
     refreshInterval: 5000,
   });
-  console.log("data---", data);
 
   // const [coords, setCoords] = useState({
   //   longitude: 0,
@@ -38,7 +37,8 @@ export default function ISSTracker() {
   //   };
   // }, []);
 
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading) return <div>loading 🧐</div>;
+  if (error) return <div>error 😬</div>;
 
   return (
     <main>
